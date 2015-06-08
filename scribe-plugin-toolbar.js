@@ -1,6 +1,8 @@
 define('scribe-plugin-toolbar',[],function () {
 
-  
+  'use strict';
+
+  var focusedElement = null;
 
   return function (toolbarNode) {
     return function (scribe) {
@@ -8,6 +10,10 @@ define('scribe-plugin-toolbar',[],function () {
 
       Array.prototype.forEach.call(buttons, function (button) {
         button.addEventListener('click', function () {
+          if (scribe.el !== focusedElement) {
+            return;
+          }
+
           // Look for a predefined command.
           var command = scribe.getCommand(button.dataset.commandName);
 
@@ -59,10 +65,11 @@ define('scribe-plugin-toolbar',[],function () {
           }
         }
       });
+
+      scribe.el.addEventListener('focus', function () {
+        focusedElement = scribe.el;
+      });
     };
   };
 
 });
-
-
-//# sourceMappingURL=scribe-plugin-toolbar.js.map
