@@ -1,6 +1,6 @@
 {
   "name": "scribe-plugin-toolbar",
-  "version": "0.2.0-escenic",
+  "version": "0.2.0-escenic-2",
   "main": "./scribe-plugin-toolbar.js",
   "authors": [
     "Oliver Joseph Ash <oliverjash@icloud.com>"
