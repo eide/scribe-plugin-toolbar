@@ -9,7 +9,7 @@ define('scribe-plugin-toolbar',[],function () {
       var buttons = toolbarNode.querySelectorAll('[data-command-name]');
 
       Array.prototype.forEach.call(buttons, function (button) {
-        button.addEventListener('click', function () {
+        button.addEventListener('mousedown', function () {
           if (scribe.el !== focusedElement) {
             return;
           }
